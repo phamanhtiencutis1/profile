@@ -1,0 +1,1152 @@
+body,
+html {
+  height: 100%;
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.background {
+  background: url("background.jpg") no-repeat center center/cover;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  filter: brightness(0.95) blur(1px);
+}
+
+.profile-card {
+  position: relative;
+  width: 350px;
+  height: auto;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 15px;
+  border: 2.5px solid transparent;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  text-align: center;
+  z-index: 1;
+  overflow: hidden;
+  transition: all 0.3s ease, border-color 0.3s ease;
+}
+
+.profile-card:hover {
+  transform: scale(1.02) translateY(-5px);
+  border-color: #000000;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.avatar {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  border: 4px solid #ffffff;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 15px;
+}
+
+h1 {
+  margin: 10px 0 5px 0;
+  font-size: 2rem;
+  color: #333;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(45deg, #000000, #ffffff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: textShine 3s ease-in-out infinite alternate;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.profile-card p {
+  margin: 5px 0;
+  color: white;
+  font-size: 1.1rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  font-style: italic;
+  animation: fadeIn 1.5s ease-in-out;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+}
+
+@keyframes textShine {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  100% {
+    background-position: 100% 50%;
+    text-shadow: 0 0 15px rgb(255, 255, 255);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.social-links {
+  margin: 15px 0;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.social-links a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+}
+
+.social-links a i {
+  font-size: 1.2em;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  transform: translateY(-3px);
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.info-box {
+  background: #f5f5f5;
+  border-radius: 12px;
+  padding: 12px 0;
+  margin: 18px 0 12px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+}
+
+.info-box .date {
+  font-size: 0.9em;
+  color: #888;
+}
+
+.contact-btn {
+  background: #000000;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 32px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  margin-top: 10px;
+}
+
+.contact-btn:hover {
+  background: #494040;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.discord-box {
+  background: rgba(30, 32, 40, 0.97);
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.18);
+  padding: 0;
+  color: #fff;
+  margin: 0 auto 18px auto;
+  max-width: 410px;
+  font-family: "Segoe UI", Arial, sans-serif;
+  border: 2px solid #3a3a4d;
+  overflow: hidden;
+  font-size: 0.97em;
+}
+.discord-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 10px 14px 10px 14px;
+  position: relative;
+}
+.discord-avatar.left,
+.discord-avatar.right {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 2px solid #222;
+  background: #fff;
+  object-fit: cover;
+  margin-top: 18px;
+}
+.discord-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 0;
+}
+.discord-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 2px;
+}
+.discord-name {
+  font-size: 0.95em;
+  font-weight: bold;
+  color: white;
+  margin-right: 4px;
+  letter-spacing: 0px;
+  max-width: 110px;
+  overflow: visible;
+  white-space: nowrap;
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1;
+}
+.discord-status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 7px;
+  background: #43b581;
+  border: 2px solid #232336;
+}
+.discord-status-dot.online {
+  background: #43b581;
+}
+.discord-status-dot.idle {
+  background: #faa61a;
+}
+.discord-status-dot.dnd {
+  background: #f04747;
+}
+.discord-status-dot.offline {
+  background: #747f8d;
+}
+.discord-icons {
+  display: flex;
+  align-items: center;
+  margin-left: 0;
+  gap: 2px;
+}
+.discord-icons img {
+  width: 16px;
+  height: 16px;
+  margin: 0 1px;
+  border-radius: 4px;
+  padding: 1px;
+  transition: transform 0.18s, box-shadow 0.18s;
+}
+.discord-icons img:hover {
+  transform: scale(1.22) rotate(-8deg);
+  box-shadow: 0 2px 8px 0 #5865f2, 0 0 8px 2px #5865f2;
+  z-index: 2;
+}
+.discord-row.info {
+  margin-top: 6px;
+  margin-bottom: 0;
+  justify-content: space-between;
+}
+.discord-mini-avatar {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.discord-mini-avatar img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid #232336;
+  background: #fff;
+  object-fit: cover;
+}
+.discord-info-text {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+}
+.discord-info-text #discord-activity {
+  font-size: 0.98em;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 1px;
+  letter-spacing: 0.01em;
+}
+.discord-info-text #discord-status {
+  font-size: 0.92em;
+  font-weight: 500;
+  color: #b0b0b0;
+  margin-bottom: 1px;
+  letter-spacing: 0.01em;
+  text-transform: lowercase;
+}
+.discord-info-text #discord-date {
+  font-size: 0.88em;
+  color: #b0b0b0;
+  font-style: italic;
+  margin-top: 2px;
+}
+
+.discord-avatar-container {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  margin-top: 18px;
+  overflow: visible;
+}
+
+.discord-avatar-container.left {
+  margin-right: 8px;
+}
+
+.discord-avatar-container.right {
+  margin-left: 8px;
+}
+
+.discord-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 2px solid #222;
+  background: #fff;
+  object-fit: cover;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  z-index: 1;
+  transition: all 0.3s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+  filter: brightness(1);
+}
+
+.discord-avatar-container::before,
+.discord-avatar-container::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: transparent;
+  opacity: 0;
+  z-index: 0;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.discord-avatar-container::before {
+  box-shadow: 0 0 0 0 transparent;
+  animation: none;
+}
+
+.discord-avatar-container::after {
+  background: transparent;
+  animation: none;
+}
+
+.discord-avatar-container:hover::before {
+  opacity: 1;
+  background: rgba(88, 101, 242, 0.5);
+  animation: glitch1 2s infinite alternate-reverse;
+}
+
+.discord-avatar-container:hover::after {
+  opacity: 1;
+  background: rgba(255, 105, 180, 0.5);
+  animation: glitch2 3s infinite alternate-reverse;
+}
+
+.discord-avatar:hover {
+  transform: scale(1.25) rotate(0deg);
+  box-shadow: 0 0 20px 5px rgba(88, 101, 242, 0.8),
+    0 0 40px 20px rgba(88, 101, 242, 0.4);
+  filter: brightness(1.2) contrast(1.1) saturate(1.2);
+  border-color: #5865f2;
+  z-index: 100;
+}
+
+@keyframes glitch1 {
+  0%,
+  100% {
+    transform: translate(0) scale(1);
+    opacity: 0.8;
+  }
+  20% {
+    transform: translate(-2px, 1px) scale(1.03);
+    opacity: 0.9;
+  }
+  40% {
+    transform: translate(2px, -1px) scale(0.98);
+    opacity: 0.7;
+  }
+  60% {
+    transform: translate(1px, 1px) scale(1.01);
+    opacity: 0.8;
+  }
+  80% {
+    transform: translate(-1px, -2px) scale(0.99);
+    opacity: 0.9;
+  }
+}
+
+@keyframes glitch2 {
+  0%,
+  100% {
+    transform: translate(0) scale(1);
+    opacity: 0.8;
+  }
+  25% {
+    transform: translate(1px, -1px) scale(0.97);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translate(-1px, 1px) scale(1.02);
+    opacity: 0.7;
+  }
+  75% {
+    transform: translate(-2px, -1px) scale(0.98);
+    opacity: 0.8;
+  }
+}
+
+.discord-frame {
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  background: linear-gradient(135deg, #5865f2, #5865f2, #ff73fa, #73ffec)
+    border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: 3;
+  animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    filter: drop-shadow(0 0 2px rgba(88, 101, 242, 0.6));
+  }
+  50% {
+    filter: drop-shadow(0 0 6px rgba(88, 101, 242, 0.8));
+  }
+  100% {
+    filter: drop-shadow(0 0 2px rgba(88, 101, 242, 0.6));
+  }
+}
+
+.discord-status-indicator {
+  position: absolute;
+  right: 4px;
+  bottom: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid #232336;
+  background: #747f8d;
+  z-index: 10;
+  box-sizing: border-box;
+  transition: background 0.2s;
+}
+.discord-status-indicator.online {
+  background: #43b581;
+}
+.discord-status-indicator.idle {
+  background: #faa61a;
+}
+.discord-status-indicator.dnd {
+  background: #f04747;
+}
+.discord-status-indicator.offline {
+  background: #747f8d;
+}
+
+/* Thêm khung Nitro cho avatar Discord */
+.nitro-avatar-frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 44px;
+  height: 44px;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.nitro-default-frame {
+  background: url("https://cdn.discordapp.com/attachments/1003592626520268800/1113035536463413248/boost-badge.png")
+    no-repeat center/contain;
+  width: 44px;
+  height: 44px;
+  filter: drop-shadow(0 0 2px rgba(88, 101, 242, 0.6));
+  animation: pulse 2s infinite;
+}
+
+@keyframes rotateFrame {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Audio Controls */
+.audio-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 15px 0;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: 30px;
+  max-width: 280px;
+  margin: 15px auto;
+}
+
+.audio-btn {
+  background: #000000;
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.audio-btn:hover {
+  background: #302828;
+  transform: scale(1.1);
+}
+
+.volume-control {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 5px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #08a4ff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  background: #0a0808;
+  transform: scale(1.2);
+}
+
+.view-counter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 12px 0;
+  color: white;
+  font-size: 0.95rem;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 8px 16px;
+  border-radius: 20px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.view-counter:hover {
+  background: rgba(0, 0, 0, 0.3);
+  color: white;
+  transform: scale(1.05);
+}
+
+.view-counter i {
+  margin-right: 6px;
+  color: #000000;
+  font-size: 1.1rem;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.view-counter #view-count {
+  font-weight: 800;
+  margin: 0 4px;
+  color: white;
+  font-size: 1rem;
+}
+
+/* Intro screen */
+#intro-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #000000, #0c0c1d);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  cursor: pointer;
+  transition: opacity 1s ease;
+}
+
+#intro-screen.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#particles-js,
+#main-particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+#main-particles-js {
+  z-index: 0;
+  pointer-events: none;
+}
+
+.intro-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.intro-text {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 300;
+  letter-spacing: 4px;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+  margin-bottom: 30px;
+  animation: pulse-text 2s infinite ease-in-out;
+}
+
+.intro-arrow {
+  color: #000000;
+  font-size: 1.5rem;
+  margin-top: 20px;
+}
+
+.pulse {
+  animation: pulse-arrow 2s infinite;
+}
+
+@keyframes pulse-text {
+  0% {
+    opacity: 0.6;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  }
+  50% {
+    opacity: 1;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8),
+      0 0 30px rgba(88, 101, 242, 0.6);
+  }
+  100% {
+    opacity: 0.6;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  }
+}
+
+@keyframes pulse-arrow {
+  0% {
+    transform: translateY(0);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(10px);
+    opacity: 1;
+    color: #5865f2;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0.6;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+/* Main content container */
+#main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* Playlist styles */
+#playlist-container {
+  max-width: 350px;
+  margin: 10px auto;
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: 10px;
+  padding: 10px;
+  transition: all 0.3s ease;
+}
+
+#playlist-container.hidden {
+  display: none;
+}
+
+.playlist {
+  max-height: 300px;
+  overflow-y: auto;
+  margin-top: 10px;
+  border-radius: 8px;
+}
+
+/* Scrollbar styles for the playlist */
+.playlist::-webkit-scrollbar {
+  width: 8px;
+}
+
+.playlist::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+}
+
+.playlist::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+
+.playlist::-webkit-scrollbar-thumb:hover {
+  background: rgba(29, 185, 84, 0.5);
+}
+
+.playlist-item {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 15px;
+  margin-bottom: 8px;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-left: 3px solid transparent;
+}
+
+.playlist-item:hover {
+  background: rgba(0, 0, 0, 0.08);
+  transform: translateX(5px);
+}
+
+.playlist-item.active {
+  background: rgba(30, 215, 96, 0.2);
+  border-left: 3px solid #1db954;
+}
+
+.song-title {
+  font-size: 0.95rem;
+  color: #222;
+  font-weight: 600;
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.song-artist {
+  font-size: 0.85rem;
+  color: #555;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Search container styles */
+.search-container {
+  margin-bottom: 15px;
+}
+
+.search-input-container {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+#spotify-search {
+  flex: 1;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 20px 0 0 20px;
+  background: rgba(0, 0, 0, 0.05);
+  font-size: 0.9rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+#spotify-search:focus {
+  background: rgba(0, 0, 0, 0.02);
+  box-shadow: 0 0 0 2px rgba(29, 185, 84, 0.3);
+}
+
+#search-button {
+  background: #1db954;
+  color: white;
+  border: none;
+  border-radius: 0 20px 20px 0;
+  padding: 0 15px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#search-button:hover {
+  background: #1ed760;
+}
+
+.search-filter {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.filter-btn {
+  flex: 1;
+  padding: 6px 0;
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.filter-btn.active {
+  background: #1db954;
+  color: white;
+}
+
+/* Loading and error states */
+.loading,
+.no-results,
+.error-message {
+  padding: 15px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: 8px;
+  margin: 10px 0;
+}
+
+.loading {
+  color: #444;
+  font-style: italic;
+}
+
+.no-results {
+  color: #555;
+}
+
+.error-message {
+  color: #d32f2f;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.error-message a {
+  color: #1db954;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.error-message a:hover {
+  text-decoration: underline;
+}
+
+#spotify-player-container {
+  margin-top: 15px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #191414;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+#spotify-player-container.hidden {
+  display: none;
+}
+
+/* Spotify Search Styling */
+.spotify-container {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #121212;
+  border-radius: 10px;
+  color: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.spotify-container h2 {
+  color: #1db954;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.search-box {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+#search-input {
+  flex: 1;
+  padding: 12px 15px;
+  border: none;
+  background-color: #282828;
+  color: white;
+  border-radius: 30px 0 0 30px;
+  font-size: 16px;
+}
+
+#search-button {
+  background-color: #1db954;
+  border: none;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 0 30px 30px 0;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#search-button:hover {
+  background-color: #1ed760;
+}
+
+.filter-options {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+.filter-btn {
+  background-color: #282828;
+  color: #b3b3b3;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.filter-btn:hover {
+  background-color: #333;
+  color: white;
+}
+
+.filter-btn.active {
+  background-color: #1db954;
+  color: white;
+}
+
+.results-container {
+  max-height: 500px;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+.results-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.results-container::-webkit-scrollbar-track {
+  background: #282828;
+  border-radius: 10px;
+}
+
+.results-container::-webkit-scrollbar-thumb {
+  background: #5a5a5a;
+  border-radius: 10px;
+}
+
+.results-container::-webkit-scrollbar-thumb:hover {
+  background: #7a7a7a;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.result-item {
+  background-color: #181818;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: background-color 0.3s, transform 0.3s;
+  cursor: pointer;
+}
+
+.result-item:hover {
+  background-color: #282828;
+  transform: translateY(-5px);
+}
+
+.result-item img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.result-item .item-info {
+  padding: 12px;
+}
+
+.result-item .item-title {
+  font-weight: bold;
+  margin-bottom: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: white;
+}
+
+.result-item .item-artist {
+  color: #b3b3b3;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.result-item .item-type {
+  display: inline-block;
+  font-size: 11px;
+  background-color: #1db954;
+  color: white;
+  padding: 3px 6px;
+  border-radius: 10px;
+  margin-top: 8px;
+  text-transform: uppercase;
+}
+
+.no-results {
+  text-align: center;
+  padding: 30px;
+  color: #b3b3b3;
+  background-color: #181818;
+  border-radius: 8px;
+}
+
+.loading {
+  text-align: center;
+  padding: 30px;
+  color: #b3b3b3;
+  background-color: #181818;
+  border-radius: 8px;
+}
+
+.loading::after {
+  content: "...";
+  animation: dots 1.5s infinite;
+}
+
+@keyframes dots {
+  0%,
+  20% {
+    content: ".";
+  }
+  40% {
+    content: "..";
+  }
+  60%,
+  100% {
+    content: "...";
+  }
+}
+
+/* Màu chữ cho username 'saygextop1vn' - MÀU TRẮNG (#FFFFFF) */
+.username-text {
+  color: #ffffff !important; /* Màu trắng */
+  font-weight: 700;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Màu chữ cho 'lượt xem' - MÀU TRẮNG (#FFFFFF) */
+.view-text {
+  color: #ffffff !important; /* Màu trắng */
+}
+
+/* Màu số lượt xem - MÀU TRẮNG (#FFFFFF) */
+#view-count {
+  color: #ffffff !important; /* Màu trắng */
+  font-weight: 800;
+}
+
+/* Màu biểu tượng mắt - MÀU XANH DISCORD (#5865F2) */
+.view-counter i {
+  color: #5865f2 !important; /* Màu xanh Discord */
+}
